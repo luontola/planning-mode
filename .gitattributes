@@ -1,0 +1,10 @@
+*.txt           eol=lf
+*.md            eol=lf
+*.js            eol=lf
+*.coffee        eol=lf
+*.us            eol=lf
+*.json          eol=lf
+*.xml           eol=lf
+*.html          eol=lf
+*.css           eol=lf
+*.less          eol=lf
