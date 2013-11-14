@@ -18,3 +18,8 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend 'application
         { expand: true, cwd: 'app', src: [ 'paper/**' ], dest: 'generated/' },
         { expand: true, cwd: 'app', src: [ 'paper/**' ], dest: 'dist/' }
       ]
+
+  watch:
+    paper:
+      files: ['app/paper/**']
+      tasks: ['copy:paper']
