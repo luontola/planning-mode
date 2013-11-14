@@ -1,3 +1,4 @@
+
 {
   "name": "planning-mode",
   "title": "An HTML/JS/CSS app",
@@ -6,6 +7,9 @@
   "author": {
     "name": "John Doe",
     "company": "ACME, Inc."
+  },
+  "dependencies": {
+    "grunt-contrib-copy": "0.4.1"
   },
   "devDependencies": {
     "lineman": "~0.14.5"
