@@ -13,13 +13,13 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend 'application
   loadNpmTasks: ['grunt-contrib-copy']
 
   copy:
-    paper:
+    paperscript:
       files: [
-        { expand: true, cwd: 'app', src: [ 'paper/**' ], dest: 'generated/' },
-        { expand: true, cwd: 'app', src: [ 'paper/**' ], dest: 'dist/' }
+        { expand: true, cwd: 'app', src: [ 'pjs/**' ], dest: 'generated/' },
+        { expand: true, cwd: 'app', src: [ 'pjs/**' ], dest: 'dist/' }
       ]
 
   watch:
-    paper:
-      files: ['app/paper/**']
-      tasks: ['copy:paper']
+    paperscript:
+      files: ['app/pjs/**']
+      tasks: ['copy:paperscript']
