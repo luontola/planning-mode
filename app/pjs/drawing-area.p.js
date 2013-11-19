@@ -1,11 +1,25 @@
-var path;
+var pathBeingDrawn;
+
+controller.addListener({
+	onDrawingFinished: function (json) {
+		new Path().importJSON(json);
+	}
+});
 
 function onMouseDown(event) {
-	path = new Path();
-	path.strokeColor = '#00000';
-	path.add(event.point);
+	pathBeingDrawn = new Path();
+	pathBeingDrawn.strokeColor = '#00000';
+	pathBeingDrawn.add(event.point);
 }
 
 function onMouseDrag(event) {
-	path.add(event.point);
+	pathBeingDrawn.add(event.point);
+}
+
+function onMouseUp(event) {
+	pathBeingDrawn.simplify();
+	var json = pathBeingDrawn.exportJSON();
+	controller.fireDrawingFinished(json);
+	pathBeingDrawn.remove();
+	pathBeingDrawn = null;
 }
